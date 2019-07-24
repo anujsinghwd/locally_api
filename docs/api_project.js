@@ -1,13 +1,15 @@
 define({
-  "name": "locally_api",
+  "name": "locally",
   "version": "0.0.1",
-  "description": "locally market apis",
+  "description": "locally shop and products",
+  "title": "Locally Api Docs",
+  "url": "http://51.15.196.66:5000/",
   "sampleUrl": false,
   "defaultVersion": "0.0.0",
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2019-07-24T10:39:39.569Z",
+    "time": "2019-07-24T10:45:24.738Z",
     "url": "http://apidocjs.com",
     "version": "0.17.7"
   }
