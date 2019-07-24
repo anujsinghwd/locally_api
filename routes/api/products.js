@@ -11,11 +11,10 @@ const Product = require('../../models/Products');
  * @apiName AddUpdateProducts
  * @apiGroup Products
  *
- * @apiParam {String} shop_id Unique Shop Id.
+ * @apiParam {Number} shop_id Unique Shop Id.
  * @apiParam {String} brandName Product's Brand Name.
- * @apiParam {String} barndId Product's Brand Id.
- * @apiParam {String} barndId Product's Brand Id.
- * @apiParam {String} productId Product's Unique Id.
+ * @apiParam {Number} barndId Product's Brand Id.
+ * @apiParam {Number} productId Product's Unique Id.
  * @apiParam {String} productName Product Name.
  * @apiParam {String} offer Offer On that Specific Product.
  * @apiParam {String} sizes Product's size availability.
@@ -129,7 +128,7 @@ router.post('/',(req, res) => {
  * @apiName Get Shop Catalog
  * @apiGroup Products
  *
- * @apiParam {String} shop_id Unique Shop Id.
+ * @apiParam {Number} shop_id Unique Shop Id.
  *
  * @apiSuccessExample {json} Success-Response:
  *      HTTP/1.1 200 OK
