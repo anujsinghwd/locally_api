@@ -114,7 +114,7 @@
   },
   {
     "type": "post",
-    "url": "api/addshop",
+    "url": "api/shops/addshop",
     "title": "Add & Edit Shop Info",
     "name": "AddEditShopInfo",
     "group": "Shop",
@@ -125,70 +125,222 @@
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "shop_id",
-            "description": "<p>Unique Shop Id.</p>"
+            "field": "name",
+            "description": "<p>Shop Name.</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "brandName",
-            "description": "<p>Product's Brand Name.</p>"
+            "field": "handler",
+            "description": "<p>Unique Shop Handler.</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "barndId",
-            "description": "<p>Product's Brand Id.</p>"
+            "field": "category",
+            "description": "<p>Shop's Product Categories.</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "productId",
-            "description": "<p>Product's Unique Id.</p>"
+            "field": "state",
+            "description": "<p>Shop State.</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "productName",
-            "description": "<p>Product Name.</p>"
+            "field": "city",
+            "description": "<p>Shop City.</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "offer",
-            "description": "<p>Offer On that Specific Product.</p>"
+            "field": "Shop",
+            "description": "<p>City Shop Locallity.</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "sizes",
-            "description": "<p>Product's size availability.</p>"
+            "field": "subLocallity",
+            "description": "<p>Shop Sublocallity.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "subSubLocallity",
+            "description": "<p>Shop subSubLocallity.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "latitude",
+            "description": "<p>Shop latitude.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "longitude",
+            "description": "<p>Shop longitude.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "owner",
+            "description": "<p>Shop Owner Name.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "shopId",
+            "description": "<p>Unique Shoip Id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "contact",
+            "description": "<p>Shop Contact Number.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "since",
+            "description": "<p>Shop Since.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "pinCode",
+            "description": "<p>Shop Area PinCode.</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
             "field": "gender",
-            "description": "<p>Product's gender availability.</p>"
+            "description": "<p>Gender Availability.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "collections",
+            "description": "<p>Shop CollectionsIds.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "offer",
+            "description": "<p>Shop Offers.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "brands",
+            "description": "<p>Shop BrandsIds.</p>"
           }
         ]
       }
     },
     "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n    {\n    \"gender\": [\n        \"K\",\n        \"W\",\n        \"M\"\n    ],\n    \"collections\": [\n        \"C\",\n        \"A\",\n        \"S\"\n    ],\n    \"products\": [\n        \"1\",\n        \"2\",\n        \"3\",\n        \"4\",\n        \"5\"\n    ],\n    \"brands\": [\n        \"121\",\n        \"123\",\n        \"124\"\n    ],\n    \"_id\": \"5d384a21a65bad5c40b33c05\",\n    \"handler\": \"anuj\",\n    \"name\": \"anuj cloths\",\n    \"shop_id\": 2000,\n    \"category\": 1,\n    \"state\": \"11\",\n    \"city\": \"1001\",\n    \"locallity\": \"10001\",\n    \"subLocallity\": \"100001\",\n    \"subSubLocallity\": 1000001,\n    \"latitude\": \"23.263242\",\n    \"longitude\": \"77.854353\",\n    \"owner\": \"anuj\",\n    \"since\": 2001,\n    \"contact\": 9072677986,\n    \"pinCode\": 110020,\n    \"offer\": \"30%\",\n    \"date\": \"2019-07-24T12:08:01.638Z\",\n    \"__v\": 0\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "routes/api/shops.js",
+    "groupTitle": "Shop"
+  },
+  {
+    "type": "post",
+    "url": "api/shops",
+    "title": "Get Shops With Filter",
+    "name": "Get_Shops_List",
+    "group": "Shop",
+    "parameter": {
       "fields": {
-        "Success 200": [
+        "Parameter": [
           {
-            "group": "Success 200",
-            "type": "Json",
+            "group": "Parameter",
+            "type": "String",
             "optional": false,
-            "field": "Prodct",
-            "description": "<p>Json Object.</p>"
+            "field": "state",
+            "description": "<p>Shop State.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "city",
+            "description": "<p>Shop City.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "locallity",
+            "description": "<p>Shop Locallity.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "gender",
+            "description": "<p>Gender Filter.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "page",
+            "description": "<p>Shop listing Page.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "collectionId",
+            "description": "<p>Collection Filter.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "brandId",
+            "description": "<p>Brand Filter.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "productId",
+            "description": "<p>Product Filter.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "offer",
+            "description": "<p>Shop Offer Filter.</p>"
           }
         ]
       }

@@ -7,32 +7,83 @@ const Shop = require('../../models/Shops');
 // Load Product Model
 const Product = require('../../models/Products');
 
-// @route   GET api/shops/test
-// @dsec    Tests Shop route
-// @access  Public
-router.get('/test', (req, res) => {
-    res.json({msg: "shops works"});
-});
 
-// @route   POST api/addshop
+// @route   POST api/shops/addshop
 // @dsec    Create / Edit Shop Profile
 // @access  Private
 /**
- * @api {post} api/addshop Add & Edit Shop Info
+ * @api {post} api/shops/addshop Add & Edit Shop Info
  * @apiName AddEditShopInfo
  * @apiGroup Shop
  *
- * @apiParam {String} shop_id Unique Shop Id.
- * @apiParam {String} brandName Product's Brand Name.
- * @apiParam {String} barndId Product's Brand Id.
- * @apiParam {String} barndId Product's Brand Id.
- * @apiParam {String} productId Product's Unique Id.
- * @apiParam {String} productName Product Name.
- * @apiParam {String} offer Offer On that Specific Product.
- * @apiParam {String} sizes Product's size availability.
- * @apiParam {String} gender Product's gender availability.
+ * @apiParam {String} name Shop Name.
+ * @apiParam {String} handler Unique Shop Handler.
+ * @apiParam {String} category Shop's Product Categories.
+ * @apiParam {String} state Shop State.
+ * @apiParam {String} city Shop City.
+ * @apiParam {String} Shop City Shop Locallity.
+ * @apiParam {String} subLocallity Shop Sublocallity.
+ * @apiParam {String} subSubLocallity Shop subSubLocallity.
+ * @apiParam {String} latitude Shop latitude.
+ * @apiParam {String} longitude Shop longitude.
+ * @apiParam {String} owner Shop Owner Name.
+ * @apiParam {String} shopId Unique Shoip Id.
+ * @apiParam {String} contact Shop Contact Number.
+ * @apiParam {String} since Shop Since.
+ * @apiParam {String} pinCode Shop Area PinCode.
+ * @apiParam {String} gender Gender Availability.
+ * @apiParam {String} collections Shop CollectionsIds.
+ * @apiParam {String} offer Shop Offers.
+ * @apiParam {String} brands Shop BrandsIds.
+ * 
  *
- * @apiSuccess {Json} Prodct Json Object.
+ * @apiSuccessExample {json} Success-Response:
+ *     HTTP/1.1 200 OK
+ * 
+        {
+        "gender": [
+            "K",
+            "W",
+            "M"
+        ],
+        "collections": [
+            "C",
+            "A",
+            "S"
+        ],
+        "products": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
+        "brands": [
+            "121",
+            "123",
+            "124"
+        ],
+        "_id": "5d384a21a65bad5c40b33c05",
+        "handler": "anuj",
+        "name": "anuj cloths",
+        "shop_id": 2000,
+        "category": 1,
+        "state": "11",
+        "city": "1001",
+        "locallity": "10001",
+        "subLocallity": "100001",
+        "subSubLocallity": 1000001,
+        "latitude": "23.263242",
+        "longitude": "77.854353",
+        "owner": "anuj",
+        "since": 2001,
+        "contact": 9072677986,
+        "pinCode": 110020,
+        "offer": "30%",
+        "date": "2019-07-24T12:08:01.638Z",
+        "__v": 0
+    }
+ * 
  */
 router.post('/addshop', (req, res) => {
 
@@ -111,6 +162,22 @@ router.post('/addshop', (req, res) => {
 // @route   POST api/shops
 // @dsec    get all Shops by filter
 // @access  Public
+/**
+ * @api {post} api/shops Get Shops With Filter
+ * @apiName Get Shops List
+ * @apiGroup Shop
+ *
+ * @apiParam {String} state Shop State.
+ * @apiParam {String} city Shop City.
+ * @apiParam {String} [locallity] Shop Locallity.
+ * @apiParam {String} [gender] Gender Filter.
+ * @apiParam {String} [page] Shop listing Page.
+ * @apiParam {String} [collectionId] Collection Filter.
+ * @apiParam {String} [brandId] Brand Filter.
+ * @apiParam {String} [productId] Product Filter.
+ * @apiParam {String} [offer] Shop Offer Filter.
+ *
+ */
 router.post('/', (req, res) => {
     const errors = {};
     let query = {
