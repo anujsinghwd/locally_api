@@ -21,7 +21,37 @@ const Product = require('../../models/Products');
  * @apiParam {String} sizes Product's size availability.
  * @apiParam {String} gender Product's gender availability.
  *
- * @apiSuccess {Json} Prodct Json Object.
+ * @apiSuccessExample {json} Success-Response:
+ *     HTTP/1.1 200 OK
+ *      {
+ *           "_id": "5d38434f1945314d77000318",
+ *           "shop_id": 2001,
+ *           "products": [
+ *               {
+ *                   "_id": "5d38434f1945314d77000319",
+ *                   "brandId": 120,
+ *                   "brandName": "NIKE",
+ *                   "product": [
+ *                       {
+ *                           "sizes": [
+ *                               "7",
+ *                               "8",
+ *                               "9"
+ *                           ],
+ *                           "gender": [
+ *                               "F"
+ *                           ],
+ *                           "_id": "5d38434f1945314d7700031a",
+ *                           "Id": 3,
+ *                           "name": "Shoes",
+ *                           "offer": "30%"
+ *                       }
+ *                   ]
+ *               }
+ *           ],
+ *           "date": "2019-07-24T11:38:55.151Z",
+ *           "__v": 0
+ *       }
  */
 router.post('/',(req, res) => {
     const productFields = {};
@@ -95,13 +125,104 @@ router.post('/',(req, res) => {
 
 
 /**
- * @api {get} api/catalogs/:shopId Get Shop Catalog ById
+ * @api {get} api/products/:shopId Get Shop Products ByShopId
  * @apiName Get Shop Catalog
  * @apiGroup Products
  *
  * @apiParam {String} shop_id Unique Shop Id.
  *
- * @apiSuccess {Json} Shop Json Object.
+ * @apiSuccessExample {json} Success-Response:
+ *      HTTP/1.1 200 OK
+        {
+            "_id": "5ca875f0f5cba30268bd5f1e",
+            "shop_id": 201,
+            "products": [
+                {
+                    "product": [
+                        {
+                            "sizes": [
+                                "6",
+                                "7",
+                                "8"
+                            ],
+                            "gender": [
+                                "F",
+                                "M"
+                            ],
+                            "_id": "5ca876ccf5cba30268bd5f25",
+                            "Id": 6,
+                            "name": "Shoes",
+                            "offer": "30%"
+                        }
+                    ],
+                    "_id": "5ca876ccf5cba30268bd5f24",
+                    "brandId": 123,
+                    "brandName": "Puma"
+                },
+                {
+                    "product": [
+                        {
+                            "sizes": [
+                                "6",
+                                "7",
+                                "8"
+                            ],
+                            "gender": [
+                                "F",
+                                "M"
+                            ],
+                            "_id": "5ca87673f5cba30268bd5f23",
+                            "Id": 5,
+                            "name": "Shoes",
+                            "offer": "30%"
+                        }
+                    ],
+                    "_id": "5ca87673f5cba30268bd5f22",
+                    "brandId": 122,
+                    "brandName": "NIKE"
+                },
+                {
+                    "product": [
+                        {
+                            "sizes": [
+                                "32",
+                                "20",
+                                "36"
+                            ],
+                            "gender": [
+                                "F",
+                                "M"
+                            ],
+                            "_id": "5ca87635f5cba30268bd5f21",
+                            "Id": 4,
+                            "name": "Jeans",
+                            "offer": "30%"
+                        },
+                        {
+                            "sizes": [
+                                "32",
+                                "20",
+                                "36"
+                            ],
+                            "gender": [
+                                "F",
+                                "M"
+                            ],
+                            "_id": "5ca875f0f5cba30268bd5f20",
+                            "Id": 3,
+                            "name": "Shirts",
+                            "offer": "30%"
+                        }
+                    ],
+                    "_id": "5ca875f0f5cba30268bd5f1f",
+                    "brandId": 121,
+                    "brandName": "PE"
+                }
+            ],
+            "date": "2019-04-06T09:48:32.158Z",
+            "__v": 4
+        }
+ * 
  */
 router.get('/:shopId', (req, res) => {
     Product.findOne({shop_id: req.params.shopId})
