@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 
-const multer  = require('multer')
-
 // Load Products Model
 const Product = require('../../models/Products');
 
@@ -105,7 +103,7 @@ router.post('/',(req, res) => {
  *
  * @apiSuccess {Json} Shop Json Object.
  */
-router.get('/catalogs/:shopId', (req, res) => {
+router.get('/:shopId', (req, res) => {
     Product.findOne({shop_id: req.params.shopId})
             .then(catalogs => {
                 if(catalogs){

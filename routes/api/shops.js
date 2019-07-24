@@ -14,9 +14,26 @@ router.get('/test', (req, res) => {
     res.json({msg: "shops works"});
 });
 
-// @route   POST api/profile
+// @route   POST api/addshop
 // @dsec    Create / Edit Shop Profile
 // @access  Private
+/**
+ * @api {post} api/addshop Add & Edit Shop Info
+ * @apiName AddEditShopInfo
+ * @apiGroup Shop
+ *
+ * @apiParam {String} shop_id Unique Shop Id.
+ * @apiParam {String} brandName Product's Brand Name.
+ * @apiParam {String} barndId Product's Brand Id.
+ * @apiParam {String} barndId Product's Brand Id.
+ * @apiParam {String} productId Product's Unique Id.
+ * @apiParam {String} productName Product Name.
+ * @apiParam {String} offer Offer On that Specific Product.
+ * @apiParam {String} sizes Product's size availability.
+ * @apiParam {String} gender Product's gender availability.
+ *
+ * @apiSuccess {Json} Prodct Json Object.
+ */
 router.post('/addshop', (req, res) => {
 
     // Get Fields
