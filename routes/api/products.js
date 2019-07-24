@@ -10,6 +10,7 @@ const Product = require('../../models/Products');
  * @api {post} api/products Add & Update Products
  * @apiName AddUpdateProducts
  * @apiGroup Products
+ * @apiVersion 0.0.1
  *
  * @apiParam {Number} shop_id Unique Shop Id.
  * @apiParam {String} brandName Product's Brand Name.
@@ -127,6 +128,7 @@ router.post('/',(req, res) => {
  * @api {get} api/products/:shopId Get Shop Products ByShopId
  * @apiName Get Shop Catalog
  * @apiGroup Products
+ * @apiVersion 0.0.1
  *
  * @apiParam {Number} shop_id Unique Shop Id.
  *

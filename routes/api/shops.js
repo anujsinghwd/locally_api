@@ -15,6 +15,7 @@ const Product = require('../../models/Products');
  * @api {post} api/shops/addshop Add & Edit Shop Info
  * @apiName AddEditShopInfo
  * @apiGroup Shop
+ * @apiVersion 0.0.1
  *
  * @apiParam {String} name Shop Name.
  * @apiParam {String} handler Unique Shop Handler.
@@ -166,6 +167,7 @@ router.post('/addshop', (req, res) => {
  * @api {post} api/shops Get Shops With Filter
  * @apiName Get Shops List
  * @apiGroup Shop
+ * @apiVersion 0.0.1
  *
  * @apiParam {String} state Shop State.
  * @apiParam {String} city Shop City.
