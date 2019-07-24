@@ -97,8 +97,8 @@ router.post('/',(req, res) => {
 
 
 /**
- * @api {get} api/products/shopId/:shopId Get Shops ById
- * @apiName Get Shops
+ * @api {get} api/catalogs/:shopId Get Shop Catalog ById
+ * @apiName Get Shop Catalog
  * @apiGroup Products
  *
  * @apiParam {String} shop_id Unique Shop Id.

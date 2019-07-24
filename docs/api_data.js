@@ -86,9 +86,9 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "api/products/shopId/:shopId",
-    "title": "Get Shops ById",
-    "name": "Get_Shops",
+    "url": "api/catalogs/:shopId",
+    "title": "Get Shop Catalog ById",
+    "name": "Get_Shop_Catalog",
     "group": "Products",
     "parameter": {
       "fields": {
