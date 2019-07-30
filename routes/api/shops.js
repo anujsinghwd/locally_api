@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
 
 // Load shop Model
 const Shop = require('../../models/Shops');
