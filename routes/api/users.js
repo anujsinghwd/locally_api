@@ -21,13 +21,22 @@ const User = require('../../models/Users');
  * @apiName Register New User
  * @apiGroup User
  * @apiVersion 0.0.1
+ * 
+ * @apiParamExample {json} Request-Example:
+ *     {
+ *       "name": "Anuj Singh"   
+ *       "email": "anuj_singh@outlook.in",
+ *       "password": "sumanuj11",
+ *       "password2": "sumanuj11"
+ *     }
+ *
  *
  * @apiParam {String} name User Full Name.
  * @apiParam {String} email User's Email Address.
  * @apiParam {String} password User's Password.
- * @apiParam {String} password Repeat Password
+ * @apiParam {String} password2 Repeat Password
  * @apiSuccessExample {json} Success-Response:
- *     HTTP/1.1 200 OK
+ * HTTP/1.1 200 OK
     {
         "_id": "5d4077188ab23c081b7a8f76",
         "name": "Anuj Singh",
@@ -81,6 +90,12 @@ router.post('/register', (req, res) => {
  * @apiName Login User
  * @apiGroup User
  * @apiVersion 0.0.1
+ * 
+ * @apiParamExample {json} Request-Example:
+ *     {
+ *       "email": "anuj_singh@outlook.in",
+ *       "password": "sumanuj11"
+ *     }
  *
  * @apiParam {String} email User's Email.
  * @apiParam {String} password User's Password.
@@ -149,6 +164,11 @@ router.post('/login', (req, res) => {
  * @apiName Get Current User
  * @apiGroup User
  * @apiVersion 0.0.1
+ * 
+ * @apiParamExample {json} Request-Example:
+ *     {
+ *       "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkNDA3NzE4OGFiMjNjMDgxYjdhOGY3NiIsIm5hbWUiOiJBbnVqIFNpbmdoIiwiaWF0IjoxNTY0NTA2NTg3LCJleHAiOjE1NjQ1OTExODd9.ug7BBgo3YEG4cZYXONCHYOvFJB0ehStPZ_VMhGRpcDo"
+ *     }
  * 
  * @apiHeader {String} Authorization Bearer Token.
  * 
